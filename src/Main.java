@@ -94,7 +94,20 @@ public class Main {
   }
 
   private static void sortExpenses(ArrayList<Integer> arrayList) {
-    int arrlength =  arrayList.size();
+    int arrlength =  arrayList.size() - 1;
     // Complete the method. The expenses should be sorted in ascending order.
+    for (int i = 0; i < arrlength; ++i) {
+      int minIndex = i;
+      for (int j = i + 1; j <= arrlength; ++j) {
+        if (arrayList.get(j) < arrayList.get(minIndex)) {
+          minIndex = j;
+        }
+      }
+      int t = arrayList.get(i);
+      arrayList.set(i, arrayList.get(minIndex));
+      arrayList.set(minIndex, t);
+    }
+    System.out.println("Your saved expenses are sorted below: \n");
+    System.out.println(arrayList + "\n");
   }
 }

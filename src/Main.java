@@ -91,6 +91,15 @@ public class Main {
     int leng = arrayList.size();
     System.out.println("Enter the expense you need to search:\t");
     // Complete the method
+    Scanner s = new Scanner(System.in);
+    int expense = s.nextInt();
+    for (int i = 0; i < arrayList.size(); ++i) {
+      if (arrayList.get(i) == expense) {
+        System.out.println("Expense " + expense + " found at index :\t" + i + "\n");
+        return;
+      }
+    }
+    System.out.println("Expense " + expense + " was not found.\n");
   }
 
   private static void sortExpenses(ArrayList<Integer> arrayList) {
